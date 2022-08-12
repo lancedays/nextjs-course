@@ -3,3 +3,9 @@
   max-width: 40rem;
   margin: 5rem auto;
 }
+
+.listTitle {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
