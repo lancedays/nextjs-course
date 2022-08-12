@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./event-item.module.css";
+import Button from "./ui/button";
 
 export default function EventItem(props) {
   const { title, image, date, location, id } = props;
@@ -23,7 +24,7 @@ export default function EventItem(props) {
           </div>
         </div>
         <div className={styles.actions}>
-          <Link href={`/events/${id}`}>Explore Event</Link>
+          <Button link={`/events/${id}`}>Explore Event</Button>
         </div>
       </div>
     </li>
