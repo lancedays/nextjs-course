@@ -3,7 +3,6 @@ import { getFeaturedEvents } from "../dummy-data";
 
 export default function HomePage() {
   const featuredEvents = getFeaturedEvents();
-  console.log(featuredEvents);
   return (
     <div>
       <EventList events={featuredEvents} />
