@@ -32,7 +32,7 @@ export default function FilteredEventsPage() {
 
   return (
     <div>
-      <EventList events={events} listTitle="Event Search" />
+      <EventList events={events} />
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function EventsPage() {
   return (
     <Fragment>
       <EventsSearch onSearch={findEventsHandler} />
-      <EventList events={events} listTitle="All Events" />
+      <EventList events={events} />
     </Fragment>
   );
 }
