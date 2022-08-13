@@ -1,11 +1,14 @@
 import EventList from "../components/events/event-list";
 import { getFeaturedEvents } from "../dummy-data";
+import { Fragment } from "react";
+import ResultsTitle from "../components/events/results-title";
 
 export default function HomePage() {
   const featuredEvents = getFeaturedEvents();
   return (
-    <div>
-      <EventList events={featuredEvents} listTitle="Featured Events" />
-    </div>
+    <Fragment>
+      <ResultsTitle />
+      <EventList events={featuredEvents} />
+    </Fragment>
   );
 }
