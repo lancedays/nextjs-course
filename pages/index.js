@@ -7,7 +7,7 @@ export default function HomePage() {
   const featuredEvents = getFeaturedEvents();
   return (
     <Fragment>
-      <ResultsTitle />
+      <ResultsTitle pageTitle="Featured Events"/>
       <EventList events={featuredEvents} />
     </Fragment>
   );
