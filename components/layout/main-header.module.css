@@ -11,23 +11,33 @@
 .logo {
   font-size: 1.5rem;
   color: white;
-  font-family: 'Fira', sans-serif;
+  font-family: "Fira", sans-serif;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #94fdfd;
+  color: #74dacc;
 }
 
 .logo a {
   text-decoration: none;
-  color: #94fdfd;
+  color: #74dacc;
+}
+
+.logo a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .navigation a {
   text-decoration: none;
   color: #74dacc;
   font-size: 1rem;
+}
+
+.navigation a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 @media (min-width: 768px) {
