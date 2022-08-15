@@ -17,4 +17,4 @@ Open a command line and navigate to a directory where you want to save the code.
  2. `cd nextjs-course`
  3. `npm i`
  4. `npm run dev`
- 5. Open your browser and navigate to [localhost](localhost:3000)
+ 5. Open your browser and navigate to [localhost:3000](localhost:3000)
