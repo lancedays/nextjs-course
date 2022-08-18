@@ -1,6 +1,6 @@
-import EventList from "../components/events/event-list";
 import { getFeaturedEvents } from "../helpers/api-util";
 import { Fragment } from "react";
+import EventList from "../components/events/event-list";
 import ResultsTitle from "../components/events/results-title";
 
 export default function HomePage(props) {

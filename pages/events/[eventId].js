@@ -3,11 +3,10 @@ import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
-import ErrorAlert from "../../components/ui/error-alert.js";
 import Button from "../../components/ui/button.js";
 
 export default function EventDetailPage(props) {
-  const event = props.event;
+  const { event } = props;
 
   if (!event) {
     return (
