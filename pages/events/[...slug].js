@@ -4,6 +4,7 @@ import EventList from "../../components/events/event-list";
 import ResultsTitle from "../../components/events/results-title";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
+import Head from "next/head";
 
 export default function FilteredEventsPage(props) {
   const { events } = props;
@@ -12,6 +13,9 @@ export default function FilteredEventsPage(props) {
   if (props.hasError) {
     return (
       <Fragment>
+        <Head>
+          <title>Events Search</title>
+        </Head>
         <ErrorAlert>
           <p className="center">Invalid Filter</p>
         </ErrorAlert>
@@ -25,6 +29,9 @@ export default function FilteredEventsPage(props) {
   if (!events || events.length === 0) {
     return (
       <Fragment>
+        <Head>
+          <title>Events Search</title>
+        </Head>
         <ErrorAlert>
           <p className="center">No events found</p>
         </ErrorAlert>
@@ -37,6 +44,9 @@ export default function FilteredEventsPage(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>Events Search</title>
+      </Head>
       <ResultsTitle date={date} />
       <EventList events={events} />
     </Fragment>
@@ -46,9 +56,9 @@ export default function FilteredEventsPage(props) {
 export async function getServerSideProps(context) {
   const { params } = context;
   const filterData = params.slug;
-  const filteredEvents = await getFilteredEvents({ year: year, month: month });
   const year = +filterData[0];
   const month = +filterData[1];
+  const filteredEvents = await getFilteredEvents({ year: year, month: month });
 
   if (
     isNaN(year) ||

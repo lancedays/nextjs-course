@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
+import Head from "next/head";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
@@ -11,6 +12,9 @@ export default function EventDetailPage(props) {
   if (!event) {
     return (
       <Fragment>
+        <Head>
+          <title>Loading...</title>
+        </Head>
         <div className="center">
           <p>Loading...</p>
         </div>
@@ -23,6 +27,9 @@ export default function EventDetailPage(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>{event.title}</title>
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
