@@ -17,7 +17,7 @@ export default function EventsPage(props) {
   return (
     <Fragment>
       <Head>
-        <title>All Events (TEST)</title>
+        <title>All Events</title>
       </Head>
       <EventsSearch onSearch={findEventsHandler} />
       <EventList events={events} />
