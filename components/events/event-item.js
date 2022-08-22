@@ -1,5 +1,6 @@
 import styles from "./event-item.module.css";
 import Button from "../ui/button";
+import Image from "next/image";
 import DateIcon from "../icons/date-icon";
 import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
@@ -13,7 +14,7 @@ export default function EventItem(props) {
   const formattedAddress = location.replace(", ", "\n");
   return (
     <li className={styles.item}>
-      <img src={"/" + image} alt={title} />
+      <Image src={"/" + image} alt={title} width={250} height={160} />
       <div className={styles.content}>
         <div className={styles.summary}>
           <h2>{title}</h2>
