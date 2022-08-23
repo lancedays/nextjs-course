@@ -2,6 +2,8 @@
 # Purpose
 I am exploring Nextjs and React as a possible framework for an upcoming project. This repository is the result of one module in an online course which can be found here [Udemy Course Link](https://www.udemy.com/course/nextjs-react-the-complete-guide/).
 
+The project here has deviated from the course lecture. I found that it is easier for me to learn a topic by implementing custom features. I am using git projects to track new features.
+
 # Live Preview
 A live preview can be found here:
  https://nextjs-course-days.herokuapp.com/
