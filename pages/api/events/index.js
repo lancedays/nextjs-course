@@ -1,5 +1,4 @@
-const request = require("../../../helpers/await-request");
-const fireBaseURL = process.env.FIREBASE_URL;
+import conn from "../../../helpers/db-connector";
 
 export default async function Handler(req, res) {
   switch (req.method) {
@@ -8,9 +7,6 @@ export default async function Handler(req, res) {
       break;
     case "POST":
       await handlePost(req, res);
-      break;
-    case "DELETE":
-      await handleDelete(req, res);
       break;
     default:
       return res
@@ -21,33 +17,31 @@ export default async function Handler(req, res) {
 
 async function handleGet(req, res) {
   try {
-    const events = await getEvents();
-    return res.status(200).json(events);
+    const query = "select * from events";
+    const result = await conn.query(query);
+    return res.status(200).json({ events: result.rows });
   } catch (error) {
     return res.status(500).json({ message: error });
   }
 }
 
-async function handlePost(request, response) {
-  return response.status(200).json({ message: "Event Post" });
-}
-
-async function handleDelete(request, response) {
-  return response.status(200).json({ message: "Event Delete" });
-}
-
-export async function getEvents() {
-  const result = await request({
-    baseUrl: fireBaseURL,
-    uri: "/events.json",
-    json: true,
-  });
-  const events = [];
-  for (const key in result) {
-    events.push({
-      id: key,
-      ...result[key],
-    });
+async function handlePost(req, res) {
+  try {
+    const { title, date, description, image, isFeatured, location } = req.body;
+    const query =
+      "insert into events(id, title, date, description, image, isfeatured, location) VALUES($1,$2,$3,$4,$5,$6,$7)";
+    const values = [
+      new Date().valueOf(),
+      title,
+      date,
+      description,
+      image,
+      isFeatured,
+      location,
+    ];
+    const result = await conn.query(query, values);
+    return res.status(201).json({ events: result });
+  } catch (error) {
+    return res.status(500).json({ message: error });
   }
-  return events;
 }
