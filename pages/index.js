@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import EventList from "../components/events/event-list";
 import ResultsTitle from "../components/events/results-title";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 
 export default function HomePage(props) {
   return (
@@ -11,6 +12,7 @@ export default function HomePage(props) {
         <title>Featured Events</title>
       </Head>
       <ResultsTitle pageTitle="Featured Events" />
+      <NewsletterRegistration />
       <EventList events={props.featuredEvents} />
     </Fragment>
   );
