@@ -12,9 +12,7 @@ export default async function Handler(req, res) {
       await handleDelete(req, res);
       break;
     default:
-      return res
-        .status(405)
-        .json({ message: `Method ${req.method} not allowed.` });
+      return res.status(400).json({ message: "Bad Request" });
   }
 }
 

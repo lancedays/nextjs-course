@@ -18,5 +18,5 @@ async function handlePost(req, res) {
   }
 
   console.log(userEmail);
-  return res.status(200).json({ message: req.body.email });
+  return res.status(201).json({ message: req.body.email });
 }
