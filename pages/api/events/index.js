@@ -29,7 +29,7 @@ async function handlePost(req, res) {
   try {
     const { title, date, description, image, isFeatured, location } = req.body;
     const query =
-      "insert into events(id, title, date, description, image, isfeatured, location) VALUES($1,$2,$3,$4,$5,$6,$7)";
+      "insert into events(id, title, date, description, image, isfeatured, location) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING id, title, date, description, image, isfeatured, location";
     const values = [
       new Date().valueOf(),
       title,
@@ -40,7 +40,7 @@ async function handlePost(req, res) {
       location,
     ];
     const result = await conn.query(query, values);
-    return res.status(201).json({ events: result });
+    return res.status(201).json({ event: result.rows[0] });
   } catch (error) {
     return res.status(500).json({ message: error });
   }
