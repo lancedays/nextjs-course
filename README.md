@@ -1,10 +1,13 @@
 
+
 # Purpose
 I am exploring Nextjs and React as a possible framework for an upcoming project. This repository is the result of one module in an online course which can be found here [Udemy Course Link](https://www.udemy.com/course/nextjs-react-the-complete-guide/).
 
-The project here has deviated from the course lecture. I found that it is easier for me to learn a topic by implementing custom features. Please see [issues](https://github.com/lancedays/nextjs-course/issues) for upcoming features and known bugs.
+The project here has deviated from the course lecture. I found that it is easier for me to learn a topic by implementing custom features.
 
 # Live Preview
+**Heroku will be discontinuing their free dynos as well as the free tiers of PostgreSQL. More info on this announcement can be found [here](https://blog.heroku.com/next-chapter). This means that as of 9/28/2022 the live preview will no longer function. I am looking for an alternative hosting solution for all of my development projects**
+
 A live preview can be found here:
  https://nextjs-course-days.herokuapp.com/
 
